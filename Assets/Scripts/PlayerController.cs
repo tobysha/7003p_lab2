@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public Vector2 moveValue ;
     public float speed ;
-    private int count = 0;
-    private int numPickups = 4;
+    private int count;
+    private int numPickups = 5;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI winText;
+    public GameObject restart;
     void Start()
     {
         count = 0;
@@ -22,7 +23,8 @@ public class PlayerController : MonoBehaviour
     }
     void update()
     {
-        SetCountText();
+        
+
     }
 
     void OnMove( InputValue value ) 
@@ -43,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            SetCountText();
         }
     }
 
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         if(count>= numPickups)
         {
             winText.text = "YOU WIN?(so easy)";
+            restart.SetActive(true);
         }
     }
 
