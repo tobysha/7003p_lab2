@@ -19,8 +19,8 @@ public class Restart_button : MonoBehaviour
     }
     public void Click()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        //    SceneManagement.LoadScene("a_nice_game");//引号里面写自己场景的名字
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+         //EditorSceneManager.LoadScene("a_nice_game");//引号里面写自己场景的名字
         button.SetActive(false);
     }
 }
